@@ -1,6 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxm8whknrxge7"]
+[gd_scene load_steps=5 format=4 uid="uid://dxm8whknrxge7"]
 
 [ext_resource type="PackedScene" uid="uid://cncis7fu1ql2m" path="res://objects/door.tscn" id="1_sh6vf"]
+[ext_resource type="Texture2D" uid="uid://dn636ts6cslos" path="res://tiles/iso_tiles_spritesheet.png" id="2_nrqd0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q7m4o"]
+texture = ExtResource("2_nrqd0")
+texture_region_size = Vector2i(64, 32)
+0:0/next_alternative_id = 3
+0:0/0 = 0
+0:0/1 = 1
+0:0/2 = 2
+0:1/0 = 0
+0:2/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_kni1u"]
+tile_shape = 1
+tile_size = Vector2i(64, 32)
+sources/0 = SubResource("TileSetAtlasSource_q7m4o")
 
 [node name="MapTown" type="Node2D"]
 
@@ -9,9 +33,14 @@ position = Vector2(52, 126)
 door_id = "start"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(0, -16)
+tile_map_data = PackedByteArray("AAAKAAUAAAABAAIAAAAMAAYAAAABAAIAAAAOAAcAAAABAAIAAAACAAUAAAABAAAAAAACAAMAAAABAAAAAAAAAAQAAAABAAAAAAAKAAcAAAABAAAAAAAMAAgAAAABAAAAAAAKAAkAAAABAAAAAAAOAAUAAAABAAAAAAAQAAYAAAABAAAAAAAKAAMAAAABAAAAAAAMAAQAAAABAAIAAAAOAAMAAAABAAIAAAAQAAIAAAABAAIAAAASAAEAAAABAAIAAAAAAAUAAAABAAAAAAABAAYAAAABAAAAAAABAAcAAAABAAAAAAACAAgAAAABAAAAAAACAAQAAAABAAAAAAABAAMAAAABAAAAAAABAAIAAAABAAAAAAAAAAEAAAABAAIAAAAAAAIAAAABAAIAAAAAAAMAAAABAAIAAAABAAQAAAABAAIAAAABAAUAAAABAAIAAAACAAYAAAABAAIAAAACAAcAAAABAAIAAAADAAgAAAABAAIAAAADAAkAAAABAAIAAAACAAkAAAABAAIAAAADAAcAAAABAAIAAAD//wMAAAABAAIAAAD//wQAAAABAAIAAAABAAoAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAgAAAAAAAAAAAAAAAYAAAAAAAAAAAD//wcAAAAAAAAAAAD//wkAAAAAAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAAAAAAAAAAAAP//AAAAAAAAAAACAAIAAAAAAAAAAAACAAEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_kni1u")
 
 [node name="DoorForest" parent="." instance=ExtResource("1_sh6vf")]
-position = Vector2(97, 5)
+z_index = 1
+y_sort_enabled = true
+position = Vector2(120, 0)
 rotation = 1.57079
 door_id = "north_entrance"
 target_scene = "map_forest"
