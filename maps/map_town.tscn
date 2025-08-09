@@ -4,10 +4,15 @@
 
 [node name="MapTown" type="Node2D"]
 
-[node name="Door" parent="." instance=ExtResource("1_sh6vf")]
-position = Vector2(233, 29)
+[node name="DoorStart" parent="." instance=ExtResource("1_sh6vf")]
+position = Vector2(52, 126)
 door_id = "start"
-target_scene = "res://maps/map_forest.tscn"
-target_door_id = "entrance_south"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="DoorForest" parent="." instance=ExtResource("1_sh6vf")]
+position = Vector2(97, 5)
+rotation = 1.57079
+door_id = "north_entrance"
+target_scene = "map_forest"
+target_door_id = "south_entrance"

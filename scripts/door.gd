@@ -12,8 +12,8 @@ var active: bool
 
 func _ready():
 	add_to_group("doors")
-	connect("body_entered", _on_body_entered)
 	await get_tree().create_timer(0.2).timeout
+	connect("body_entered", _on_body_entered)
 	active = true
 
 func _on_body_entered(body):

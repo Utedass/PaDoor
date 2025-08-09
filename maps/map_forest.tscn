@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://erqa7l1fmfea"]
+[gd_scene load_steps=2 format=3 uid="uid://erqa7l1fmfea"]
+
+[ext_resource type="PackedScene" uid="uid://cncis7fu1ql2m" path="res://objects/door.tscn" id="1_oc73s"]
 
 [node name="MapForest" type="Node2D"]
+
+[node name="Door" parent="." instance=ExtResource("1_oc73s")]
+door_id = "south_entrance"
+target_scene = "map_town"
+target_door_id = "north_entrance"
