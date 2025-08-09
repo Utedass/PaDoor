@@ -1,28 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsakx1r0j8f8j"]
+[gd_scene load_steps=3 format=3 uid="uid://dsakx1r0j8f8j"]
 
 [ext_resource type="Script" uid="uid://bwh5jh1458dtj" path="res://scripts/map_manager.gd" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://dl1d05436jap3" path="res://scripts/player.gd" id="2_h2yge"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0xm2m"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bo8nqxchyhtvb" path="res://objects/player.tscn" id="2_0xm2m"]
 
 [node name="Main" type="Node2D"]
 
+[node name="Player" parent="." instance=ExtResource("2_0xm2m")]
+
 [node name="MapManager" type="Node" parent="."]
 script = ExtResource("1_0xm2m")
-
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(50, 50)
-script = ExtResource("2_h2yge")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-scale = Vector2(17.5, 17.5)
-texture = SubResource("PlaceholderTexture2D_0xm2m")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CircleShape2D_h2yge")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-50, -50)
-position_smoothing_enabled = true
