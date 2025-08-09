@@ -22,3 +22,7 @@ texture = SubResource("PlaceholderTexture2D_0xm2m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CircleShape2D_h2yge")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-50, -50)
+position_smoothing_enabled = true

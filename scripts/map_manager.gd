@@ -19,11 +19,11 @@ func load_map(scene_name: String, entry_id: String):
 	# Wait a frame so nodes are ready
 	await get_tree().process_frame
 	var target_found: bool = false
-	for door in new_map.get_tree().get_nodes_in_group("doors"):
+	for door: Node2D in new_map.get_tree().get_nodes_in_group("doors"):
 		door.connect("door_triggered", _on_door_triggered)
 		if door.door_id == entry_id:
 			target_found = true
-			player.global_position = door.global_position
+			player.teleport(door.global_position)
 	if not target_found:
 		return
 	if current_map:
