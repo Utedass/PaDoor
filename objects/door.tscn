@@ -3,15 +3,17 @@
 [ext_resource type="Script" uid="uid://deiaehwqvthhe" path="res://scripts/door.gd" id="1_566yj"]
 [ext_resource type="Texture2D" uid="uid://bj57jpdu8mto1" path="res://tiles/doortest.png" id="2_j7xx1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jtvd"]
-size = Vector2(8, 24)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j7xx1"]
+radius = 19.0
+height = 42.0
 
 [node name="Door" type="Area2D"]
 visibility_layer = 513
 script = ExtResource("1_566yj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_5jtvd")
+position = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_j7xx1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visibility_layer = 513
