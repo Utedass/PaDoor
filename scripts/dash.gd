@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var durationTimer: Timer = $Duration
+@onready var repetitionTimer: Timer = $Repetitions
 @onready var DashGhost = preload("res://objects/dash_ghost.tscn")
 
 var sprite : AnimatedSprite2D
@@ -8,7 +9,12 @@ var sprite : AnimatedSprite2D
 func startDash(sprite: AnimatedSprite2D, duration: float):
 	self.sprite = sprite
 	durationTimer.wait_time = duration
+	
+	durationTimer.timeout.connect(_on_durationTimer_timeout)
 	durationTimer.start()
+	
+	repetitionTimer.timeout.connect(_on_repetitionTimer_timeout)
+	repetitionTimer.start()
 	instanceGhost()
 
 func instanceGhost():
@@ -22,3 +28,9 @@ func instanceGhost():
 
 func isDashing():
 	return !durationTimer.is_stopped()
+
+func _on_durationTimer_timeout():
+	repetitionTimer.stop()
+
+func _on_repetitionTimer_timeout():
+	instanceGhost()

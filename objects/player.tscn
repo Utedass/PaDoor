@@ -315,3 +315,6 @@ script = ExtResource("4_nmc1l")
 
 [node name="Duration" type="Timer" parent="Dash"]
 one_shot = true
+
+[node name="Repetitions" type="Timer" parent="Dash"]
+wait_time = 0.05
