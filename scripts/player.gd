@@ -2,17 +2,31 @@ extends CharacterBody2D
 
 @export var speed := 100
 
+@export var dashDuration := 0.2
+@export var dashSpeed := 300
+
 @onready
 var animation: AnimatedSprite2D = $AnimatedSprite2D
+
+@onready
+var dash = $Dash
 
 enum AnimationDirection { EAST, WEST, NORTH, SOUTH }
 var lastDirection: AnimationDirection = AnimationDirection.SOUTH
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("dash"):
+		print_debug("DASHING!!")
+		dash.startDash($AnimatedSprite2D, dashDuration)
+	
+	var chosenSpeed = speed
+	if dash.isDashing():
+		chosenSpeed = dashSpeed
+	
 	var dir = Vector2.ZERO
 	dir.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	dir.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	velocity = dir.normalized() * speed
+	velocity = dir.normalized() * chosenSpeed
 	velocity.y /= 2
 	
 	if dir.x > 0:

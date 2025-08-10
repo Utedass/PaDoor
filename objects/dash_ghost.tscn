@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsvrktlo63j03"]
+
+[ext_resource type="Script" uid="uid://cxc6lvbgrixeg" path="res://scripts/dash_ghost.gd" id="1_i30jn"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nmc1l"]
+
+[node name="DashGhost" type="Sprite2D"]
+scale = Vector2(10.5, 10.5)
+texture = SubResource("PlaceholderTexture2D_nmc1l")
+script = ExtResource("1_i30jn")
