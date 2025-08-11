@@ -16,12 +16,38 @@ var dash = $Dash
 
 enum AnimationDirection { EAST, WEST, NORTH, SOUTH }
 var lastDirection: AnimationDirection = AnimationDirection.SOUTH
+# Jumpest
+var jump_time := 0.0
+var jump_duration := 0.5 
+var is_jumping := false
 
+func start_jump():
+	is_jumping = true
+	jump_time = 0.0
+	print_debug("test jump")
+
+	
+func _process(delta):
+	if is_jumping:
+		jump_time += delta
+		var t = jump_time / jump_duration
+		if t > 1.0:
+			t = 1.0
+			is_jumping = false
+		var scale_factor = 1 + 0.3 * 4 * t * (1 - t)
+		animation.scale = Vector2(scale_factor *2.3, scale_factor) # Det funkar inte jättebra
+	else:
+		animation.scale = Vector2(1, 1)
+
+#End jumptest
 
 func _input(event):
 	if Input.is_action_just_pressed("walk_toggle"):
 		is_walking = !is_walking
 		print_debug("test toggle",  is_walking)
+	if Input.is_action_just_pressed("start_jump"):
+		start_jump()
+		print_debug("test jump press")
 		
 func _physics_process(delta):
 	if Input.is_action_just_pressed("dash"):
