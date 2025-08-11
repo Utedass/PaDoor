@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 @export var speed := 100
+@export var walkSpeed := speed / 2 
+var is_walking := false
+
 
 @export var dashDuration := 0.2
 @export var dashSpeed := 300
@@ -14,12 +17,18 @@ var dash = $Dash
 enum AnimationDirection { EAST, WEST, NORTH, SOUTH }
 var lastDirection: AnimationDirection = AnimationDirection.SOUTH
 
+
+func _input(event):
+	if Input.is_action_just_pressed("walk_toggle"):
+		is_walking = !is_walking
+		print_debug("test toggle",  is_walking)
+		
 func _physics_process(delta):
 	if Input.is_action_just_pressed("dash"):
 		print_debug("DASHING!!")
 		dash.startDash($AnimatedSprite2D, dashDuration)
 	
-	var chosenSpeed = speed
+	var chosenSpeed = walkSpeed if is_walking else speed
 	if dash.isDashing():
 		chosenSpeed = dashSpeed
 	

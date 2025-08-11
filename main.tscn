@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsakx1r0j8f8j"]
 
 [ext_resource type="Script" uid="uid://bwh5jh1458dtj" path="res://scripts/map_manager.gd" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://bo8nqxchyhtvb" path="res://objects/player.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://d2ojqf6tcamlw" path="res://objects/player.tscn" id="2_0xm2m"]
 
 [node name="Main" type="Node2D"]
 
