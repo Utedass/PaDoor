@@ -35,7 +35,9 @@ func _process(delta):
 			t = 1.0
 			is_jumping = false
 		var scale_factor = 1 + 0.3 * 4 * t * (1 - t)
-		animation.scale = Vector2(scale_factor *2.3, scale_factor) # Det funkar inte jättebra
+		animation.scale = Vector2(scale_factor *2.3, scale_factor) # Det funkar inte jättebra. Skalar upp det för att ge en hupp effekt. 
+		# Tanken är att skala upp men förskjuta x så att om jag står på typ 0,0 och så blir jag dubbelt så stor så förskjuts grunkan till apogee 1,0 och sedan ner igen
+		# Vet inte om det också borde gälla hitbox
 	else:
 		animation.scale = Vector2(1, 1)
 
