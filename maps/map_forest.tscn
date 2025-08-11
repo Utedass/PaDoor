@@ -16,4 +16,11 @@ tile_map_data = PackedByteArray("AAAAAAMAAAABAAIAAAAAAAIAAAABAAIAAAAAAAEAAAABAAI
 tile_set = ExtResource("2_jony7")
 
 [node name="Sign" parent="." instance=ExtResource("3_1kxim")]
-position = Vector2(4, -83)
+position = Vector2(7, -77)
+sign_id = "2"
+message = "DASHEN ÄR SÅ DJÄVLA FET! \\n Och Helmut Kohl gillar kopiösa mängder smör"
+
+[node name="Sign2" parent="." instance=ExtResource("3_1kxim")]
+position = Vector2(-94, -80)
+sign_id = "3"
+message = "Jag funderar på om signs behöver persistance. Typ jag trycker \"f\" och så läser jag och så får jag klicka bort dialogen? Så att man kan springa iväg medan man dialogar. FÖR VEM FAN HAR TID ATT STÅ STILL? Fast samtidigt så behöver inte all signs det. Liksom är det bara en skylt där det står \"Russinhög\" så är det ju bara att den poppar upp såhär."

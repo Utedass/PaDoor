@@ -4,8 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://d2ojqf6tcamlw" path="res://objects/player.tscn" id="2_0xm2m"]
 
 [node name="Main" type="Node2D"]
+position = Vector2(608, 344)
 
 [node name="Player" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(0, -8)
 
 [node name="MapManager" type="Node" parent="."]
 script = ExtResource("1_0xm2m")
@@ -16,9 +18,15 @@ script = ExtResource("1_0xm2m")
 visibility_layer = 1023
 z_index = 2
 y_sort_enabled = true
-offset_left = 173.0
-offset_top = 368.0
-offset_right = 734.0
-offset_bottom = 864.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = 108.0
+offset_right = 312.0
+offset_bottom = 251.0
 text = "Välkommen till spelet. Det här är all exposition som är tillgänglig för dig! Riktiga män klarar en backstory med max 20 ord. DU ÄR SÅ DJÄVLA MANLIG ATT DU SLIPPER BACKSTORY."
-autowrap_mode = 3
+horizontal_alignment = 1
+autowrap_mode = 2
