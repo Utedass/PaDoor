@@ -43,6 +43,12 @@ func _process(delta):
 
 #End jumptest
 
+# Start test magic shit
+
+@onready var ball_sprite = $Fairy  
+
+# End test magic shit
+
 func _input(event):
 	if Input.is_action_just_pressed("walk_toggle"):
 		is_walking = !is_walking
@@ -50,6 +56,10 @@ func _input(event):
 	if Input.is_action_just_pressed("start_jump"):
 		start_jump()
 		print_debug("test jump press")
+	if Input.is_action_just_pressed("toggle_fairy"):  # TEST:2
+		ball_sprite.visible = not ball_sprite.visible
+	if can_spawn_doors and Input.is_action_just_pressed("spawn_door"):
+		spawn_door()
 		
 func _physics_process(delta):
 	if Input.is_action_just_pressed("dash"):
@@ -94,3 +104,22 @@ func teleport(position: Vector2):
 	var camera:Camera2D = $Camera2D
 	global_position = position
 	camera.reset_smoothing()
+	
+# Test
+
+@export var can_spawn_doors := true  # Toggle this based on player permissions
+
+@onready var world_root = get_tree().current_scene
+var DoorScene = preload("res://objects/door.tscn")
+
+func spawn_door():
+	if world_root == null:
+		print_debug("World node not found!")
+		return
+	var door_instance = DoorScene.instantiate()
+	door_instance.position = global_position + Vector2(0, 0)  # Spawn near player
+	door_instance.door_id = "HellDoor"  # You’ll probably want unique IDs in practice
+	door_instance.target_scene = "res://scenes/DalsLanged.tscn" #Jag tänker att 
+	door_instance.target_door_id = "HeavenDoor"
+	world_root.add_child(door_instance)
+	print("Door spawned by player at ", door_instance.position)

@@ -5,13 +5,38 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2od7h"]
 texture = ExtResource("1_nh1s3")
 0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(5, 5)
+0:0/0/physics_layer_0/angular_velocity = 2.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8.74934, 28.7882, 46.5691, 30.4816, 46.0046, -9.59606)
 1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(5, 5)
+1:0/0/physics_layer_0/angular_velocity = 2.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8.74934, 28.7882, 46.5691, 30.4816, 46.0046, -9.59606)
 2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(5, 5)
+2:0/0/physics_layer_0/angular_velocity = 2.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8.74934, 28.7882, 46.5691, 30.4816, 46.0046, -9.59606)
 3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(5, 5)
+3:0/0/physics_layer_0/angular_velocity = 2.0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8.74934, 28.7882, 46.5691, 30.4816, 46.0046, -9.59606)
 0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(5, 5)
+0:1/0/physics_layer_0/angular_velocity = 2.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8.74934, 28.7882, 46.5691, 30.4816, 46.0046, -9.59606)
 1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(5, 5)
+1:1/0/physics_layer_0/angular_velocity = 2.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8.74934, 28.7882, 46.5691, 30.4816, 46.0046, -9.59606)
 2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(5, 5)
+2:1/0/physics_layer_0/angular_velocity = 2.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8.74934, 28.7882, 46.5691, 30.4816, 46.0046, -9.59606)
 3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(5, 5)
+3:1/0/physics_layer_0/angular_velocity = 2.0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8.74934, 28.7882, 46.5691, 30.4816, 46.0046, -9.59606)
 
 [resource]
+physics_layer_0/collision_layer = 3
 sources/0 = SubResource("TileSetAtlasSource_2od7h")

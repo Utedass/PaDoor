@@ -1,13 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsakx1r0j8f8j"]
+[gd_scene load_steps=4 format=3 uid="uid://dsakx1r0j8f8j"]
 
 [ext_resource type="Script" uid="uid://bwh5jh1458dtj" path="res://scripts/map_manager.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://d2ojqf6tcamlw" path="res://objects/player.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://b27lhhmax7kxr" path="res://tiles/Fairyshit.png" id="2_h2yge"]
 
 [node name="Main" type="Node2D"]
 position = Vector2(608, 344)
 
 [node name="Player" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(0, -8)
+
+[node name="Fairy" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_h2yge")
+offset = Vector2(20, -20)
 
 [node name="MapManager" type="Node" parent="."]
 script = ExtResource("1_0xm2m")

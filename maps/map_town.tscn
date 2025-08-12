@@ -22,6 +22,10 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(0, 16)
 tile_set = ExtResource("3_q7m4o")
+collision_visibility_mode = 1
+
+[node name="Sign" parent="Floor (TileMapLayer)" instance=ExtResource("4_kni1u")]
+position = Vector2(264, 79)
 
 [node name="DoorForest" parent="." instance=ExtResource("1_sh6vf")]
 z_index = 1
@@ -34,3 +38,8 @@ target_door_id = "south_entrance"
 
 [node name="Sign" parent="." instance=ExtResource("4_kni1u")]
 position = Vector2(-43, 160)
+
+[node name="Sign2" parent="." instance=ExtResource("4_kni1u")]
+position = Vector2(153, 192)
+sign_id = "Tutt-orial"
+message = "P för fairy, C för jump kanske, d för springa? Nä.. Men nära nog! "

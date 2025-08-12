@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0x84sgt48hs5"]
+
+[ext_resource type="Script" uid="uid://sirujn64j6sg" path="res://maps/tile_map_layer.gd" id="1_5estb"]
+
+[sub_resource type="GDScript" id="GDScript_g8iom"]
+script/source = "extends Node2D
+
+@export var map_width: int = 20
+@export var map_height: int = 20
+
+func _ready():
+	generate_map()
+
+func generate_map():
+	randomize()
+	for x in range(map_width):
+		for y in range(map_height):
+			var tile_id = randi() % 3  # Adjust depending on your TileSet
+			set_cell(0, Vector2i(x, y), tile_id)
+"
+
+[node name="MapDungeon" type="Node2D"]
+script = SubResource("GDScript_g8iom")
+map_width = null
+map_height = null
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+script = ExtResource("1_5estb")
